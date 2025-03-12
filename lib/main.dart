@@ -8,7 +8,7 @@ class SimpleCalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Simple Calculator',
+      title: 'Smug Calculator',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -106,7 +106,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Simple Calculator'),
+        title: Text('Smug Calculator'),
       ),
       body: Column(
         children: <Widget>[
