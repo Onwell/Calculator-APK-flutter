@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(SimpleCalculatorApp());
@@ -8,7 +9,7 @@ class SimpleCalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Smug Calculator',
+      title: 'Smug Calculator v0',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -92,11 +93,14 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 
   Widget buildButton(String buttonText) {
     return Expanded(
-      child: OutlinedButton(
-        onPressed: () => buttonPressed(buttonText),
-        child: Text(
-          buttonText,
-          style: TextStyle(fontSize: 24.0),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0), // Add padding here
+        child: OutlinedButton(
+          onPressed: () => buttonPressed(buttonText),
+          child: Text(
+            buttonText,
+            style: TextStyle(fontSize: 38.0),
+          ),
         ),
       ),
     );
@@ -106,26 +110,26 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Smug Calculator'),
+        title: Text('Smug Calculator v0'),
       ),
       body: Column(
         children: <Widget>[
           // Display the full expression
           Container(
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 12.0),
+            padding: EdgeInsets.symmetric(vertical: 24.0, horizontal: 20.0),
             child: Text(
               _expression,
-              style: TextStyle(fontSize: 24.0, color: Colors.grey),
+              style: TextStyle(fontSize: 54.0, color: Colors.grey),
             ),
           ),
           // Display the current output
           Container(
             alignment: Alignment.centerRight,
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
+            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
             child: Text(
               _output,
-              style: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
@@ -161,7 +165,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 children: <Widget>[
                   buildButton("."),
                   buildButton("0"),
-                  buildButton("00"),
                   buildButton("+"),
                 ],
               ),
